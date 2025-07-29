@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Cookie Example</title>
+  </head>
+  <body>
+    <h1>
+      User session Hijacking:Welcome to the world of security, Mr:
+      <span id="userName"></span>
+    </h1>
+
+    <script>
+      // Get 'name' from query string
+      const params = new URLSearchParams(window.location.search);
+      const name = params.get("name");
+      function setCookie(name, value, days) {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+        document.cookie = `${encodeURIComponent(name)}=${encodeURIComponent(
+          value
+        )}; expires=${expires.toUTCString()}; path=/`;
+      }
+      if (name) {
+        // Set cookie: expires in 7 days
+
+        // Show name in page (⚠️ NOTE: This is vulnerable to XSS!)
+        document.getElementById("userName").innerHTML = name;
+        setCookie("username", "JohnDoe", 7); // stores cookie for 7 days
+      }
+    </script>
+  </body>
+</html>

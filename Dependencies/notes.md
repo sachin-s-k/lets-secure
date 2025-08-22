@@ -1,5 +1,7 @@
 ## Dependency Security
 
+**Mitigation**
+
 1. Regular audit dependencies (npm audit, npm update )
 2. Enforcing auditing (npm set audit true)Dependentbot using weekly analysis
 3. Code and dependency monitor using codeql

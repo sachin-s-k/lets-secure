@@ -1,0 +1,18 @@
+{
+  "name": "ssji",
+  "version": "1.0.0",
+  "description": "",
+  "main": "example1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "example": "node example1.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dot-env": "^0.0.1",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0"
+  }
+}
